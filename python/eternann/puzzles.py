@@ -19,10 +19,12 @@ is ignored. The return value is a list of dictionaries with the following keys:
         "author": header.index("Author") if "Author" in header else None,
         "secondary_structure": header.index("Secondary Structure") if "Secondary Structure" in header else None,
     }
-    return [
-        {
-            k: row[column_idx[k]] if column_idx[k] else None \
-                for k in column_idx.keys()
-        }
-        for row in rows[1:]
-    ]
+    def get_value(row, key):
+        value = None
+        if column_idx[key]:
+            idx = column_idx[key]
+            if len(row[idx]) and row[idx] != "None":
+                value = row[idx]
+        return value
+    return [{ k: get_value(row, k) for k in column_idx.keys() }
+            for row in rows[1:]]
