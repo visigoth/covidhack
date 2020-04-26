@@ -140,3 +140,10 @@ AUUUCCACUAGAGAAGGUCUAGAGUGUUUGUCGUUUGUCAGAAGUCCCUAUUCCAGGUACGAACACGGUGGAUAUGUUCG
  frequency of mfe structure in ensemble 0.018328669418666253; ensemble diversity - 22.18
 ```
 
+## Jupyter
+
+Jupyter is already installed and ready to go. You just need to give it a place to work with your data as well as load/use the python code here.
+
+As a convenience, `jupyter.sh` will start a container running a jupyter notebook. Open the link it prints in your browser to get started. It mounts the `notebooks/` directory as well as the `python/` directory into the container. In the container, `notebooks/` gets mounted to `/notebooks` and `python/` gets mounted to `/python-modules`. 
+
+**N.B.** The `/python-modules` directory must be added to your notebook's `sys.path` in order to `import` the python modules.

@@ -68,3 +68,7 @@ RUN make -j
 RUN make check && make install
 
 RUN conda develop -n py36 /usr/local/lib/python3.6/site-packages
+
+RUN conda install -y -n py36 jupyter
+
+RUN mkdir /notebooks && mkdir /python-modules && mkdir /data

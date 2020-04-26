@@ -10,7 +10,6 @@ is ignored. The return value is a list of dictionaries with the following keys:
     """
     reader = csv.reader(puzzle_file, delimiter="\t", quotechar='"')
     rows = []
-    import pdb; pdb.set_trace()
     for row in reader:
         rows.append(row)
     header = rows[0]
