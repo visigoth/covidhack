@@ -8,7 +8,7 @@ While CUDA is optional, it will be helpful to run training algorithms on CUDA-en
 
 # Docker Image
 
-The Dockerfile creates an ubuntu-based PyTorch image that is compatible with CUDA. It automatically builds Vienna. In order to build, you will need to independently download NVIDIA's NCCL library package.
+The Dockerfile creates an ubuntu-based PyTorch image that is compatible with CUDA. It automatically builds Vienna.
 
 ## Host System Pre-requisites
 
@@ -30,10 +30,6 @@ Docker version 19.03.8, build afacb8b7f0
 ## Build the image
 
 `docker build -t eternann:latest .`
-
-### Download NVIDIA NCCL Package
-
-You will need to download NVIDIA's NCCL package on your own to build this image because it requires accepting their terms. Download the "local installer" package from [here](https://developer.nvidia.com/nccl/nccl-download) and place it in this directory for use by the `Dockerfile`.
 
 ## Try it out
 
